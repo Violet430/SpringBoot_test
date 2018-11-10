@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" media="all" href="../../webapp/static/css/style.css"
+          th:href="@{/static/css/style.css}"/>
+    <script type="text/javascript" src="../../webapp/static/js/thymeleaf.js"
+            th:src="@{/static/js/thymeleaf.js}"></script>
+
+    <script>
+        testFunction();
+    </script>
+</head>
+<body>
+<p>引入外部URL测试</p>
+<p th:text="${name}">name</p>
+<p th:text="'hello! ' + ${name} + 'vio'">hello world</p>
+<p th:text="|hello! ${name}vio|">hello world</p>
+
+<div class="showing">
+    <div th:replace="include::footer1" ></div>
+    <div th:replace="include::footer2(2015,2018)" ></div>
+</div>
+</body>
+</html>
